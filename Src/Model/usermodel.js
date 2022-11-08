@@ -1,0 +1,32 @@
+const mongoose=require("mongoose")
+const User=new mongoose.Schema({
+    title:{
+        type:String,
+        required:true,
+        enum:["Mr","Miss","Mrs"]
+    },
+    Name:{
+        type:String,
+        required:true
+    },
+    PhoneNo:{
+        type:Number,
+        required:true,
+        unique:true
+    },
+    Email:{
+        type:String,
+        required:true,
+        unique:true   
+    },
+    Password:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    Address:{
+        type:String,
+        required:true
+    }
+},{timestamps:true})
+module.exports=mongoose.model("user",User)
